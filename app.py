@@ -8,7 +8,7 @@ import pandas as pd
 st.title("EP Risk Reward Table")
 
 # Fetch data from the CSV file
-data = pd.read_csv(r"C:\Users\charl\OneDrive\workspace\algo\screen\EP_risk_calculator\filtered_markets.csv")
+data = pd.read_csv(r"filtered_markets.csv")
 
 # Display the data in the Streamlit app
 if not data.empty:
