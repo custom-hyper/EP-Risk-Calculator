@@ -3,7 +3,7 @@ import numpy as np  # Import numpy for using np.where
 from sqlalchemy import create_engine
 
 # Database connection parameters for SQLite
-db_url = r'MEXC.db'  # Ensure this path is correct
+db_url = r'C:\Users\charl\OneDrive\workspace\algo\MEXC.db'  # Ensure this path is correct
 
 # Create a database engine
 engine = create_engine(f'sqlite:///{db_url}')
@@ -62,3 +62,13 @@ premarket_df['date'] = pd.to_datetime(premarket_df['timestamp'] / 1000, unit='s'
 
 # Create the EP_screen table in the database
 premarket_df.to_sql('EP_screen', engine, if_exists='replace', index=False)
+
+# Display the ranked markets
+print(ranked_markets)  # Display the ranked markets
+
+# Save the filtered result to a CSV file
+latest_date = ranked_markets['date'].max()  # Get the latest date
+filtered_markets = ranked_markets[ranked_markets['date'] == latest_date].head(50)  # Filter for latest date and limit to 50 rows
+print(filtered_markets)  # Display the filtered markets
+
+filtered_markets.to_csv('filtered_markets.csv', index=False)  # Save as CSV
