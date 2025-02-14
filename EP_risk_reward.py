@@ -3,7 +3,7 @@ import numpy as np  # Import numpy for using np.where
 from sqlalchemy import create_engine
 
 # Database connection parameters for SQLite
-db_url = r'C:\Users\charl\OneDrive\workspace\algo\MEXC.db'  # Ensure this path is correct
+db_url = r'MEXC.db'  # Ensure this path is correct
 
 # Create a database engine
 engine = create_engine(f'sqlite:///{db_url}')

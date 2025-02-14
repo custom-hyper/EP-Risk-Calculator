@@ -3,7 +3,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Database connection parameters for SQLite
-db_url = r'C:\Users\charl\OneDrive\workspace\algo\MEXC.db'  # Ensure this path is correct
+db_url = r'MEXC.db'  # Ensure this path is correct
 engine = create_engine(f'sqlite:///{db_url}')
 
 # Streamlit app title
